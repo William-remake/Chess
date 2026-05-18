@@ -13,11 +13,7 @@ namespace ChessLogic
 
         public Pawn(Player color) 
         {
-<<<<<<< HEAD
-            color = color;
-=======
             Color = color;
->>>>>>> 6c8b6daa2c76f00f816c303e9a2655ec152eea04
         }
 
         public override Piece Copy()

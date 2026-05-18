@@ -15,7 +15,6 @@ namespace ChessLogic
         public bool HasMoved { get; set; } = false;
 
         public abstract Piece Copy();
-<<<<<<< HEAD
 
         public abstract IEnumerable<Move> GetMoves(Position from, Board board);
 
@@ -44,7 +43,5 @@ namespace ChessLogic
         {
             return dirs.SelectMany(dir => MovePositionInDir(from, board, dir));
         }
-=======
->>>>>>> 6c8b6daa2c76f00f816c303e9a2655ec152eea04
     }
 }
