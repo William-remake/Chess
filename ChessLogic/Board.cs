@@ -75,7 +75,7 @@ namespace ChessLogic
                 {
                     Position pos = new Position(r, c);
 
-                    if (IsEmpty(pos))
+                    if (!IsEmpty(pos))
                     {
                         yield return pos;
                     }
