@@ -21,13 +21,12 @@
             <UniformGrid x:Name="HighlightGrid"
                          Rows="8"
                          Columns="8">
-            </UniformGrid>      
-            
+            </UniformGrid>
+
             <UniformGrid x:Name="PiecesGrid"
                          Rows="8"
                          Columns="8"
                          RenderOptions.BitmapScalingMode="HighQuality">
-
             </UniformGrid>
         </Grid>
     </Viewbox>
