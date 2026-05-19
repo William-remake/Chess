@@ -33,5 +33,6 @@ namespace ChessLogic
             move.Execute(Board);
             CurrentPlayer = CurrentPlayer.Opponent();
         }
+
     }
 }
