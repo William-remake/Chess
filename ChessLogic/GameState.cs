@@ -13,11 +13,17 @@ namespace ChessLogic
         public Result Result { get; private set; } = null;
 
         private int noCaptureOrPawnMoves = 0;
+        private string stateString;
+
+        private readonly Dictionary<string, int> stateHistory = new Dictionary<string, int>();
 
         public GameState(Board board, Player currentPlayer)
         {
             CurrentPlayer = currentPlayer;
             Board = board;  
+
+            stateString = new StateString(CurrentPlayer, board).ToString();
+            stateHistory[stateString] = 1;
         }
 
         public IEnumerable<Move> LegalMovesForPiece(Position pos)
@@ -40,13 +46,15 @@ namespace ChessLogic
             if (captureOrPawn)
             {
                 noCaptureOrPawnMoves = 0;
+                stateHistory.Clear();
             }
             else
             {
                 noCaptureOrPawnMoves++;
             }
 
-                CurrentPlayer = CurrentPlayer.Opponent();
+            CurrentPlayer = CurrentPlayer.Opponent();
+            UpdateStateString();
             CheckForGameOver();
         }
 
@@ -82,6 +90,10 @@ namespace ChessLogic
             {
                 Result = Result.Draw(EndReason.FiftyMoveRule);
             }
+            else if (ThreefoldRepetition())
+            {
+                Result = Result.Draw(EndReason.ThreefoldRepetion);
+            }
         }
 
         public bool IsGameOver()
@@ -93,6 +105,25 @@ namespace ChessLogic
         {
             int fullMMoves = noCaptureOrPawnMoves / 2;
             return fullMMoves == 50;
+        }
+
+        private void UpdateStateString()
+        {
+            stateString = new StateString(CurrentPlayer, Board).ToString();
+
+            if (!stateHistory.ContainsKey(stateString))
+            {
+                stateHistory[stateString] = 1;
+            }
+            else
+            {
+                stateHistory[stateString]++;
+            }
+        }
+
+        private bool ThreefoldRepetition()
+        {
+            return stateHistory[stateString] == 3;
         }
     }
 }
