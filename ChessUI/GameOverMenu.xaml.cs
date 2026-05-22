@@ -36,7 +36,7 @@ namespace ChessUI
         {
             return winner switch
             {
-                Player.White => "wHITE WINS!",
+                Player.White => "WHITE WINS!",
                 Player.Black => "BLACK WINS!",
                 _ => "IT'S A DRAW",
             };
@@ -60,7 +60,7 @@ namespace ChessUI
                 EndReason.Checkmate => $"CHECKMATE - {PlayerString(currentPlayer)} CAN'T MOVE",
                 EndReason.FiftyMoveRule => "FIFTY-MOVE RULE",
                 EndReason.InsufficientMaterial => "INSUFFICIENT MATERIAL",
-                EndReason.ThreefoldRepetition => "THREEFOLD REPETION",
+                EndReason.ThreefoldRepetition => "THREEFOLD REPETITION",
                 _ => "",
 
             };
