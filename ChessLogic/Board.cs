@@ -223,7 +223,7 @@ namespace ChessLogic
             foreach (Position pos in pawnPositions.Where(IsInside))
             {
                 Piece piece = this[pos];
-                if (piece != null || piece.Color != player || piece.Type != PieceType.Pawn)
+                if (piece == null || piece.Color != player || piece.Type != PieceType.Pawn)
                 {
                     continue;
                 }
@@ -242,7 +242,7 @@ namespace ChessLogic
         {
             Position skipPos = GetPawnSkipPosition(player.Opponent());
 
-            if (skipPos != null)
+            if (skipPos == null)
             {
                 return false;
             }

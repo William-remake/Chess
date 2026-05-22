@@ -17,9 +17,9 @@ namespace ChessLogic
 
         private readonly Dictionary<string, int> stateHistory = new Dictionary<string, int>();
 
-        public GameState(Board board, Player currentPlayer)
+        public GameState(Player player, Board board)
         {
-            CurrentPlayer = currentPlayer;
+            CurrentPlayer = player;
             Board = board;  
 
             stateString = new StateString(CurrentPlayer, board).ToString();
@@ -92,7 +92,7 @@ namespace ChessLogic
             }
             else if (ThreefoldRepetition())
             {
-                Result = Result.Draw(EndReason.ThreefoldRepetion);
+                Result = Result.Draw(EndReason.ThreefoldRepetition);
             }
         }
 
