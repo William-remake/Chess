@@ -60,7 +60,7 @@ namespace ChessUI
                 EndReason.Checkmate => $"CHECKMATE - {PlayerString(currentPlayer)} CAN'T MOVE",
                 EndReason.FiftyMoveRule => "FIFTY-MOVE RULE",
                 EndReason.InsufficientMaterial => "INSUFFICIENT MATERIAL",
-                EndReason.ThreefoldRepetion => "THREEFOLD REPETION",
+                EndReason.ThreefoldRepetition => "THREEFOLD REPETION",
                 _ => "",
 
             };
