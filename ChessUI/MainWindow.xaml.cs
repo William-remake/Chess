@@ -33,7 +33,7 @@ namespace ChessUI
             InitializeComponent();
             InitializeBoard();
 
-            gameState = new GameState(Board.Initial(), Player.White);
+            gameState = new GameState(Player.White, Board.Initial());
             DrawBoard(gameState.Board);
             SetCursor(gameState.CurrentPlayer);
         }
@@ -222,7 +222,7 @@ namespace ChessUI
             selectedPos = null;
             HideHighlights();
             moveCache.Clear();
-            gameState = new GameState(Board.Initial(), Player.White);
+            gameState = new GameState(Player.White, Board.Initial());
             DrawBoard(gameState.Board);
             SetCursor(gameState.CurrentPlayer);
         }
