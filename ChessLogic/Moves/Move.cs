@@ -20,5 +20,10 @@ namespace ChessLogic
             Execute(boardCopy);
             return !boardCopy.IsInCheck(player);
         }
+
+        public override string ToString()
+        {
+            return $"{FromPos}{ToPos}";
+        }
     }
 }

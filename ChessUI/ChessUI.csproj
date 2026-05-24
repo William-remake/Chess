@@ -19,6 +19,7 @@
     <None Remove="Assets\KingW.png" />
     <None Remove="Assets\KnightB.png" />
     <None Remove="Assets\KnightW.png" />
+    <None Remove="Assets\menu.png" />
     <None Remove="Assets\PawnB.png" />
     <None Remove="Assets\PawnW.png" />
     <None Remove="Assets\QueenB.png" />
@@ -42,6 +43,9 @@
     <Resource Include="Assets\KingW.png" />
     <Resource Include="Assets\KnightB.png" />
     <Resource Include="Assets\KnightW.png" />
+    <Resource Include="Assets\menu.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\PawnB.png" />
     <Resource Include="Assets\PawnW.png" />
     <Resource Include="Assets\QueenB.png" />

@@ -53,5 +53,13 @@ namespace ChessLogic
         {
             return new Position(pos.Row + dir.RowDelta, pos.Column + dir.ColumnDelta);
         }
+
+        public override string ToString()
+        {
+            char file = (char)('a' + Column);
+            int rank = 8 - Row;
+
+            return $"{file}{rank}";
+        }
     }
 }
