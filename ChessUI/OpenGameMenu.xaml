@@ -1,0 +1,52 @@
+﻿<Window x:Class="ChessUI.OpenGameMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChessUI"
+        mc:Ignorable="d"
+        Title="OpenGameMenu" 
+        Height="700" 
+        Width="900"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Icon="/Assets/icon.ico"
+        Background="#101010">
+    <Grid>
+
+        <!-- Background -->
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/menu.png"
+                        Stretch="Fill"/>
+        </Grid.Background>
+
+        <!-- Dark Overlay -->
+        <Rectangle Fill="#66000000"/>
+
+        <!-- Menu -->
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+            <TextBlock Text="CHESS"
+                       FontSize="80"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,40"/>
+
+            <Button Content="PLAY"
+                    Width="220"
+                    Height="60"
+                    FontSize="28"
+                    Margin="0,0,0,20"
+                    Click="Play_Click"/>
+
+            <Button Content="EXIT"
+                    Width="220"
+                    Height="60"
+                    FontSize="28"
+                    Click="Exit_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Window>
